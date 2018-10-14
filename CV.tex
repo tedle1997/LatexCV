@@ -1,0 +1,50 @@
+%Initiate
+\documentclass{article}
+
+
+\usepackage{tikz}
+\usetikzlibrary{mindmap,trees}
+\usepackage{verbatim}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[most]{tcolorbox}
+\geometry{margin=0pt}
+
+\newtcolorbox{bgbox}[1][]{nobeforeafter,sharp corners,#1}
+
+\begin{document}
+
+	\begin{bgbox}[height=\paperheight,colback=white,width=0.65\textwidth, leftrule=0pt]
+		%TODO: write the formal part
+		
+		%MindMap about Ted
+		\begin{tikzpicture}
+  			\path[mindmap,concept color=pink,text=white]
+    			node[concept, text=black] {
+    				{\Large Le Lam Thuong} \newline
+				\centering{
+					\includegraphics[width=.4\linewidth]{Ted.jpg}
+				}
+    			}
+    			[clockwise from=-45]
+    			child[concept color=green!50!black] {
+      				node[concept] {Pro\-gramming Languages}
+      				[clockwise from=0]
+      				child { node[concept] {Python} }
+      				child { node[concept] {Java} }
+      				child { node[concept] {C++}}
+      			}  
+    			child[concept color=blue] {
+      				node[concept] {applied}
+      				[clockwise from=-65]
+      				child { node[concept] {databases} }
+      				child { node[concept] {WWW} }
+    			}
+    			child[concept color=red] { node[concept] {technical} };
+		\end{tikzpicture}
+		
+		%TODO: write a Timeline if necessary
+		
+	\end{bgbox}
+\end{document}
+
